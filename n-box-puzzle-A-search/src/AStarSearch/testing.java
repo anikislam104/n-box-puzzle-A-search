@@ -1,3 +1,5 @@
+package AStarSearch;
+
 import java.util.PriorityQueue;
 
 public class testing {

@@ -1,3 +1,5 @@
+package AStarSearch;
+
 public class Node {
     int[][] current;
     int fn;
