@@ -33,6 +33,7 @@ public class HammingDistance {
 
             //puzzle = new int[3][3];
             for (int i = 0; i < rc; i++) {
+                System.out.println("Enter row no."+(i+1)+" elements");
                 for (int j = 0; j < rc; j++) {
                     String s = scanner.nextLine();
                     puzzle[i][j] = Integer.parseInt(s);
@@ -70,6 +71,7 @@ public class HammingDistance {
         else if(n%2!=0) {
             //puzzle = new int[4][4];
             for (int i = 0; i < rc; i++) {
+                System.out.println("Enter row no."+(i+1)+" elements");
                 for (int j = 0; j < rc; j++) {
                     String s = scanner.nextLine();
                     puzzle[i][j] = Integer.parseInt(s);
