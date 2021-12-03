@@ -14,11 +14,13 @@ public class ManhattanDistance {
         Scanner scanner=new Scanner(System.in);
         String n1=scanner.nextLine();
         int n=Integer.parseInt(n1);
+        n=n*n-1;
         int rc= (int) Math.sqrt(n+1);
         int puzzle[][]=new int[rc][rc];
         int exploredNodes=0,expandedNodes=0;
         //System.out.println(rc);
         int inv = 0, isInv = 0;
+
         if(n%2==0) {
 
             //puzzle = new int[3][3];
@@ -132,7 +134,7 @@ public class ManhattanDistance {
                         searchNode = searchNode.prevNode;
                     }
                     finalPath.add(searchNode);
-                    System.out.println("cost= "+finalPath.size());
+                    System.out.println("cost= "+(finalPath.size()-1));
                     System.out.println("Explored nodes= "+exploredNodes);
                     System.out.println("Expanded nodes= "+closedNodes.size());
                     System.out.println("Path:");
@@ -196,7 +198,7 @@ public class ManhattanDistance {
                         searchNode = searchNode.prevNode;
                     }
                     finalPath.add(searchNode);
-                    System.out.println("cost= "+finalPath.size());
+                    System.out.println("cost= "+(finalPath.size()-1));
                     System.out.println("Explored nodes= "+exploredNodes);
                     System.out.println("Expanded nodes= "+closedNodes.size());
                     System.out.println("Path:");
@@ -216,7 +218,7 @@ public class ManhattanDistance {
                     }
 
                     finalPath.add(searchNode);
-                    System.out.println("cost= "+finalPath.size());
+                    System.out.println("cost= "+(finalPath.size()-1));
                     System.out.println("Explored nodes= "+exploredNodes);
                     System.out.println("Expanded nodes= "+closedNodes.size());
                     System.out.println("Path:");
@@ -236,7 +238,7 @@ public class ManhattanDistance {
                         searchNode = searchNode.prevNode;
                     }
                     finalPath.add(searchNode);
-                    System.out.println("cost= "+finalPath.size());
+                    System.out.println("cost= "+(finalPath.size()-1));
                     System.out.println("Explored nodes= "+exploredNodes);
                     System.out.println("Expanded nodes= "+closedNodes.size());
                     System.out.println("Path:");
@@ -255,7 +257,7 @@ public class ManhattanDistance {
                         searchNode = searchNode.prevNode;
                     }
                     finalPath.add(searchNode);
-                    System.out.println("cost= "+finalPath.size());
+                    System.out.println("cost= "+(finalPath.size()-1));
                     System.out.println("Explored nodes= "+exploredNodes);
                     System.out.println("Expanded nodes= "+closedNodes.size());
                     System.out.println("Path:");
@@ -265,27 +267,21 @@ public class ManhattanDistance {
                     }
                     break;
                 }
-                int min1, min2, min;
-                min1 = Math.min(upH, downH);
-                min2 = Math.min(rightH, leftH);
-                min = Math.min(min1, min2);
+                if (upH<Integer.MAX_VALUE-1000) {
+                    open.add(upNode);
+                    exploredNodes++;
 
-                if (min == upH && upH<Integer.MAX_VALUE-1000) {
-                    if (!open.contains(upNode)) {
-                        open.add(upNode);
-                        exploredNodes++;
-                    }
                 }
-                if (!open.contains(downNode) && min == downH && downH<Integer.MAX_VALUE-1000) {
+                if (downH<Integer.MAX_VALUE-1000) {
                     open.add(downNode);
                     exploredNodes++;
                 }
-                if (min == rightH && !open.contains(rightNode) && rightH<Integer.MAX_VALUE-1000) {
+                if (rightH<Integer.MAX_VALUE-1000) {
                     open.add(rightNode);
                     exploredNodes++;
 
                 }
-                if (min == leftH && !open.contains(leftNode) && leftH<Integer.MAX_VALUE-1000) {
+                if (leftH<Integer.MAX_VALUE-1000) {
                     open.add(leftNode);
                     exploredNodes++;
                 }
