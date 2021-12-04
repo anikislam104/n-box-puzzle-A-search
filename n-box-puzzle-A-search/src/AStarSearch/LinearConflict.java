@@ -25,10 +25,10 @@ public class LinearConflict {
 
             //puzzle = new int[3][3];
             for (int i = 0; i < rc; i++) {
-                System.out.println("Enter row no."+(i+1)+" elements");
+                //System.out.println("Enter row no."+(i+1)+" elements");
                 for (int j = 0; j < rc; j++) {
-                    String s = scanner.nextLine();
-                    puzzle[i][j] = Integer.parseInt(s);
+                    int s = scanner.nextInt();
+                    puzzle[i][j] = s;
                 }
             }
             int[] arr = new int[n + 1];
@@ -61,10 +61,10 @@ public class LinearConflict {
         else if(n%2!=0) {
             //puzzle = new int[4][4];
             for (int i = 0; i < rc; i++) {
-                System.out.println("Enter row no."+(i+1)+" elements");
+                //System.out.println("Enter row no."+(i+1)+" elements");
                 for (int j = 0; j < rc; j++) {
-                    String s = scanner.nextLine();
-                    puzzle[i][j] = Integer.parseInt(s);
+                    int s = scanner.nextInt();
+                    puzzle[i][j] = s;
                 }
             }
             int[] arr = new int[n + 1];
